@@ -1,0 +1,37 @@
+body{
+    display: flex;
+    color: blue;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: url(Image/Hi.png) no-repeat center center fixed;
+    background-size: cover;
+}
+body.fade-out { 
+    opacity: 0;
+}
+.container{
+    text-align: center;
+    animation: fadeIn 2s ease-in-out;
+}
+.hi{
+    font-size: 100px; 
+    color: blue;
+    animation: textFadeIn 3s ease-in-out; 
+} 
+    p { 
+        font-size: 50px; 
+        color: green;
+        margin-top: 10px;
+        animation: textFadeIn 4s ease-in-out;
+    }
+    @keyframes fadeIn { from { opacity: 0; } 
+    to { opacity: 1; 
+    }
+ } 
+ @keyframes textFadeIn { from { opacity: 0; transform: translateY(20px); } 
+ to { opacity: 1; transform: translateY(0); 
+}
+}
