@@ -35,7 +35,6 @@ header {
 .nav-links {
     list-style: none;
     display: flex;
-    justify-content: space-between;
     gap: 1rem;
 }
 
@@ -215,7 +214,7 @@ footer {
 }
 
 /* Responsive Design */
-@media (max-width: 2000px) {
+@media (max-width: 2500px) {
     .hero {
         flex-direction: column;
         text-align: center;
