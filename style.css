@@ -1,37 +1,235 @@
-body{
-    display: flex;
-    color: blue;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+/* General Reset */
+* {
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background: url(Image/Hi.png) no-repeat center center fixed;
-    background-size: cover;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
 }
-body.fade-out { 
-    opacity: 0;
+
+/* Body */
+body {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    background-color: #f9f9f9;
+    margin: 0;
 }
-.container{
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0056b3;
+    color: #fff;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo img {
+    height: 50px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-links li {
+    margin: 0;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ffd700;
+}
+
+.auth-buttons .btn {
+    text-decoration: none;
+    color: #0056b3;
+    background-color: #ffd700;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.auth-buttons .btn:hover {
+    background-color: #ffcc00;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+    background: linear-gradient(135deg, #0056b3 50%, #f9f9f9 50%);
+    color: #fff;
+    min-height: 80vh;
+}
+
+.hero-content {
+    max-width: 50%;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+.hero .cta-buttons .btn {
+    display: inline-block;
+    text-decoration: none;
+    margin-right: 1rem;
+    color: #0056b3;
+    background-color: #ffd700;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.hero .cta-buttons .btn:hover {
+    background-color: #ffcc00;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Features Section */
+.features {
     text-align: center;
-    animation: fadeIn 2s ease-in-out;
+    padding: 4rem 2rem;
+    background-color: #fff;
 }
-.hi{
-    font-size: 100px; 
-    color: blue;
-    animation: textFadeIn 3s ease-in-out; 
-} 
-    p { 
-        font-size: 50px; 
-        color: green;
-        margin-top: 10px;
-        animation: textFadeIn 4s ease-in-out;
-    }
-    @keyframes fadeIn { from { opacity: 0; } 
-    to { opacity: 1; 
-    }
- } 
- @keyframes textFadeIn { from { opacity: 0; transform: translateY(20px); } 
- to { opacity: 1; transform: translateY(0); 
+
+.features h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #0056b3;
 }
+
+.feature-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.feature-item {
+    background: #f9f9f9;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+}
+
+.feature-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #0056b3;
+}
+
+.feature-item p {
+    font-size: 1rem;
+}
+
+/* Footer */
+footer {
+    background-color: #0056b3;
+    color: #fff;
+    padding: 2rem;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-content img {
+    height: 50px;
+    margin-bottom: 1rem;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+    color: #ffd700;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #ffcc00;
+}
+
+.footer-contact p {
+    margin-bottom: 0.5rem;
+}
+
+.social-media a {
+    margin: 0 0.5rem;
+    display: inline-block;
+}
+
+.social-media img {
+    height: 30px;
+    transition: transform 0.3s ease;
+}
+
+.social-media img:hover {
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-image img {
+        margin-top: 2rem;
+    }
+
+    .feature-list {
+        flex-direction: column;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
 }
