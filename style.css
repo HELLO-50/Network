@@ -33,10 +33,10 @@ header {
 }
 
 .nav-links {
-    width: 80%;
     list-style: none;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    gap: 1rem;
 }
 
 .nav-links li {
