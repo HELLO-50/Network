@@ -41,6 +41,7 @@ header {
 }
 
 .nav-links a {
+    background-color: #fff;
     color: #fff;
     text-decoration: none;
     font-weight: bold;
