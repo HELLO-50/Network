@@ -33,7 +33,7 @@ header {
 }
 
 .nav-links {
-    width: 30%;
+    width: 80%;
     list-style: none;
     display: flex;
     justify-content: space-evenly;
