@@ -41,11 +41,11 @@ header {
 }
 
 .nav-links a {
-    background-color: #050505;
     color: #fff;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
+    border: #050505;
     border-radius: 8px;
 }
 
