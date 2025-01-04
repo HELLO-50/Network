@@ -109,7 +109,7 @@ header {
 }
 
 .hero-image img {
-    max-width: 70%;
+    max-width: 100%;
     height: auto;
     border-radius: 10px;
 }
@@ -214,7 +214,7 @@ footer {
 }
 
 /* Responsive Design */
-@media (max-width: 1000px) {
+@media (max-width: 2000px) {
     .hero {
         flex-direction: column;
         text-align: center;
