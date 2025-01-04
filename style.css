@@ -53,7 +53,7 @@ header {
 
 .auth-buttons .btn {
     text-decoration: none;
-    color: #0056b3;
+    color: #1b5593;
     background-color: #ffd700;
     padding: 0.5rem 1rem;
     border-radius: 5px;
@@ -62,7 +62,7 @@ header {
 }
 
 .auth-buttons .btn:hover {
-    background-color: #ffcc00;
+    background-color: #797256;
 }
 
 /* Hero Section */
