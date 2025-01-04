@@ -33,9 +33,10 @@ header {
 }
 
 .nav-links {
+    width: 30;
     list-style: none;
     display: flex;
-    gap: 1rem;
+    justify-content: space-evenly;
 }
 
 .nav-links li {
