@@ -214,14 +214,14 @@ footer {
 }
 
 /* Responsive Design */
-@media (min-width: 768px) {
+@media (max-width: 2500px) {
     .hero {
         flex-direction: column;
         text-align: center;
     }
 
     .hero-content {
-        max-width: 80%;
+        max-width: 100%;
     }
 
     .hero-image img {
