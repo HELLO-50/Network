@@ -31,9 +31,6 @@ header {
 }
 
 .nav-links {
-    background-color: white;
-    width: 30px;
-    height: 30px;
     list-style: none;
     display: flex;
     gap: 1rem;
@@ -44,16 +41,14 @@ header {
 }
 
 .nav-links a {
-    display: block;
-    color: black;
+    color: #fff;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
-    border-radius: 4px;
 }
 
 .nav-links a:hover {
-    color: #586d8a;
+    color: #445c7b;
 }
 
 .auth-buttons .btn {
