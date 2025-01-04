@@ -13,7 +13,6 @@ body {
     color: #333;
     background-color: #f9f9f9;
     margin: 0;
-    flex-wrap: wrap;
 }
 
 /* Header */
@@ -215,14 +214,14 @@ footer {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (min-width: 768px) {
     .hero {
         flex-direction: column;
         text-align: center;
     }
 
     .hero-content {
-        max-width: 100%;
+        max-width: 80%;
     }
 
     .hero-image img {
