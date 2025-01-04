@@ -41,11 +41,12 @@ header {
 }
 
 .nav-links a {
-    background-color: #fff;
+    background-color: #050505;
     color: #fff;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
+    border-radius: 8px;
 }
 
 .nav-links a:hover {
