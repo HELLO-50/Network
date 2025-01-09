@@ -1,4 +1,4 @@
-/*container*/
+/* Container */
 .container {
     display: flex;
     justify-content: center;
@@ -33,42 +33,55 @@
 
 /* Vertical Line Divider */
 .vertical-line {
-    width: 5px;
-    height: 500px;
+    width: 4px;
+    height: 300px;
     background-color: #0f0f0f; /* Black vertical line */
     margin: 0 50px;
 }
+
+/* Login Form */
 .Register-form {
     background: rgba(255, 255, 255, 0.9); /* Light background */
     padding: 30px 20px;
     border-radius: 15px;
-    width: 350px;
+    width: 450px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
+
 
 .Register-form h2 {
     margin: 0 0 20px;
     text-align: center;
     color: #000; /* Black color for heading */
-}
-
-.Register-form label {
-    display: block;
-    margin-bottom: 5px;
-    color: #333; /* Dark gray label */
-    font-weight: bold;
-}
-
-.Register-form input {
     width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc; /* Light gray border */
-    border-radius: 5px;
-    font-size: 1rem;
+}
+
+.form-group-horizontal { 
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: space-between; 
+    width: 100%; 
+    margin-bottom: 15px
+} 
+.form-group { 
+    margin-bottom: 15px; 
+    width: 48%; /* Adjust as necessary to fit within the container */ 
+} 
+.form-group label { 
+    display: block; margin-bottom: 5px; 
+    color: #333; /* Dark gray label */ 
+    font-weight: bold; 
+} 
+.form-group input { 
+    width: 100%; 
+    padding: 12px; 
+    border: 1px solid #ccc; /* Light gray border */ 
+    border-radius: 5px; font-size: 1rem; 
     transition: box-shadow 0.3s ease, border-color 0.3s ease;
 }
-
 .Register-form input:focus {
     border-color: #0056b3; /* Darker blue */
     outline: none;
@@ -91,3 +104,4 @@
 .form-actions .btn-primary:hover {
     background-color: #ffcc00;
 }
+ 
