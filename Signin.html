@@ -6,6 +6,7 @@
     <meta name="description" content="Sign in to Education Gateway and access your personalized learning dashboard.">
     <title>Sign In - Education Gateway</title>
     <link rel="icon" href="images/education.png" type="image/png">
+    <link rel="stylesheet" href="styles/common.css">
     <link rel="stylesheet" href="styles/signin.css">
 </head>
 <body>
@@ -18,13 +19,12 @@
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
-                <li><a href="courses.html">Courses</a></li>
                 <li><a href="support.html">Support</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
             </ul>
         </nav>
-        <div class="auth-buttons">
-            <a href="signup.html" class="btn">Register</a>
+        <div class="header-buttons">
+            <a href="signup.html" class="header-btn header-btn-primary">Register</a>
         </div>
     </header>
 
@@ -41,11 +41,11 @@
 
         <!-- Login Form Section -->
         <div class="login-form">
-            <h2>Sign In</h2>
+            <h2>Sign-in</h2>
             <form action="/Login" method="post">
                 <div class="form-group">
-                    <label for="Username">Username</label>
-                    <input id="Username" type="text" name="Username" required>
+                    <label for="univid">University ID</label>
+                    <input id="univid" type="text" name="univid" required>
                 </div>
 
                 <div class="form-group">
@@ -54,11 +54,11 @@
                 </div>
 
                 <div class="form-actions">
-                    <button type="submit" class=" btn btn-login">Login</button>
+                    <button type="submit" class=" btn btn-primary">Login</button>
                 </div>
 
                 <div class="form-links">
-                    <a href="password-reset.html" id="password-reset" class="btn blue">Password Reset</a>
+                    <a href="password-reset.html" id="password-reset" class="btn btn-secondary">Password Reset</a>
                 </div>
             </form>
         </div>
