@@ -72,9 +72,9 @@
 }
 
 .login-form input:focus {
-    border-color: #007bff; /* Blue border on focus */
+    border-color: #0056b3; /* Darker blue */
     outline: none;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Blue glow on focus */
+    box-shadow: 0 0 10px rgba(0, 86, 179, 0.5); /* Stronger glow */
 }
 
 .form-actions {

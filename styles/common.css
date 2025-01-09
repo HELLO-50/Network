@@ -45,12 +45,41 @@ header {
 .nav-links li a:hover {
     color: #ffd700;
 }
+/* Header Buttons */
+.header-btn {
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.header-btn-primary {
+    background-color: #ffd700;
+    color: #0056b3;
+}
+
+.header-btn-primary:hover {
+    background-color: #ffcc00;
+    color: #003366;
+}
+
+.header-btn-secondary {
+    background-color: #0056b3;
+    color: #fff;
+}
+
+.header-btn-secondary:hover {
+    background-color: #4dabf7;
+}
 
 /* Footer */
 footer {
     background-color: #0056b3;
     color: #fff;
-    padding: 2rem;
+    padding: 3rem 2rem;
     text-align: center;
 }
 

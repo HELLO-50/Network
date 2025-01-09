@@ -73,6 +73,17 @@
     color: #333;
     line-height: 1.5;
 }
+@media (max-width: 768px) {
+    .feature-list {
+        flex-direction: column; /* Stack cards vertically */
+        align-items: center; /* Center-align the cards */
+    }
+
+    .feature-item {
+        max-width: 90%; /* Adjust card width for small screens */
+        margin-bottom: 2rem; /* Add spacing between stacked cards */
+    }
+}
 
 /* Buttons for Index Page */
 .cta-buttons {
