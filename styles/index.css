@@ -1,205 +1,33 @@
-/* General Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
-}
-
-/* Body */
-body {
-    font-size: 16px;
-    line-height: 1.5;
-    color: #333;
-    margin: 0;
-}
-
-/* Header */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #0056b3;
-    color: #fff;
-    padding: 1rem 2rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.logo img {
-    height: 50px;
-    border-radius: 50%;
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 1rem;
-}
-
-.nav-links li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-.nav-links li a:hover {
-    color: #ffd700;
-}
-
-/* Buttons */
-.btn {
-    display: inline-block;
-    text-decoration: none;
-    color: #0056b3; /* Default text color */
-    background-color: #ffd700; /* Yellow background */
-    padding: 0.75rem 1.5rem;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.btn:hover {
-    background-color: #ffcc00; /* Darker yellow for hover */
-    color: #003366; /* Darker blue text color */
-}
-
-.hero .btn.primary {
-    margin-right: 1rem; /* Add spacing for primary buttons in the hero section */
-}
-
-.hero .btn.secondary {
-    background-color: #ffffff; /* White background for secondary button */
-    color: #0056b3; /* Blue text */
-    border: 1px solid #0056b3; /* Add border for contrast */
-}
-
-.hero .btn.secondary:hover {
-    background-color: #f0f0f0; /* Slightly darker white for hover */
-    color: #003366; /* Darker blue text for hover */
-}
-
 /* Hero Section */
 .hero {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 2rem;
-    background: url(../images/background.png) center / cover fixed;
+    padding: 4rem 2rem;
+    color: #fff;
     min-height: 80vh;
+    border-radius: 10px;
 }
 
-.hero-content h1 {
-    font-size: 3rem; /* Match size from Signin */
-    color: #0056b3; /* Blue color for heading */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Shadow effect */
-    line-height: 1.2; /* Line spacing */
+.hero-content {
+    max-width: 50%;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.hero-content .gateway {
-    color: #0056b3; /* Same blue color for Gateway */
-}
-
-.hero-content p {
-    font-size: 1.5rem; /* Match font size */
-    color: #228b22; /* Green color for subtext */
-    margin-top: 10px; /* Add space between heading and subtext */
-}
-
-.cta-buttons {
-    display: flex;
+.hero h1 {
+    font-size: 3rem;
+    color: #0056b3;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    line-height: 1.2;
+    margin-bottom: 1rem;
 }
 
 .hero-image img {
     max-width: 60%;
     height: auto;
     border-radius: 10px;
-}
-
-/* Features Section */
-.features {
-    text-align: center;
-    padding: 4rem 2rem;
-    background-color: #fff;
-}
-
-.features h2 {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    color: #0056b3;
-}
-
-.feature-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
-}
-
-.feature-item {
-    background: #f9f9f9;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    max-width: 300px;
-}
-
-.feature-item h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: #0056b3;
-}
-
-.feature-item p {
-    font-size: 1rem;
-}
-
-/* Footer */
-footer {
-    background-color: #0056b3;
-    color: #fff;
-    padding: 2rem;
-    text-align: center;
-}
-
-.footer-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
-}
-
-.footer-content img {
-    height: 50px;
-    margin-bottom: 10px;
-}
-
-.footer-content p {
-    margin: 0;
-    font-size: 1rem;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .hero {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .hero-content {
-        max-width: 100%;
-    }
-
-    .hero-image img {
-        margin-top: 2rem;
-    }
-
-    .feature-list {
-        flex-direction: column;
-    }
-
-    .footer-content {
-        flex-direction: column;
-        text-align: center;
-    }
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
