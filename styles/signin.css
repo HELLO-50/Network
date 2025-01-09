@@ -1,22 +1,22 @@
 /* Login Form */
 .login-form {
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.9); /* Light background */
     padding: 30px 20px;
     border-radius: 15px;
     width: 350px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
 }
 
 .login-form h2 {
     margin: 0 0 20px;
     text-align: center;
-    color: #000;
+    color: #000; /* Black text */
 }
 
 .login-form label {
     display: block;
     margin-bottom: 5px;
-    color: #333;
+    color: #333; /* Dark gray label */
     font-weight: bold;
 }
 
@@ -24,31 +24,14 @@
     width: 100%;
     padding: 12px;
     margin-bottom: 15px;
-    border: 1px solid #ccc;
+    border: 1px solid #ccc; /* Light gray border */
     border-radius: 5px;
     font-size: 1rem;
     transition: box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .login-form input:focus {
-    border-color: #007bff;
+    border-color: #007bff; /* Blue border on focus */
     outline: none;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-}
-
-#password-reset {
-    background-color: #0056b3;
-    color: #fff;
-    display: block;
-    width: 100%;
-    text-align: center;
-    padding: 12px;
-    border-radius: 5px;
-    margin-top: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-#password-reset:hover {
-    background-color: #4dabf7;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Blue glow on focus */
 }
