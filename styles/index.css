@@ -47,18 +47,36 @@ header {
     color: #445c7b;
 }
 
-.auth-buttons .btn {
+/* Buttons */
+.btn {
+    display: inline-block;
     text-decoration: none;
-    color: #1b5593;
-    background-color: #ffd700;
-    padding: 0.5rem 1rem;
+    color: #0056b3; /* Default text color */
+    background-color: #ffd700; /* Yellow background */
+    padding: 0.75rem 1.5rem;
     border-radius: 5px;
     font-weight: bold;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.auth-buttons .btn:hover {
-    background-color: #797256;
+.btn:hover {
+    background-color: #ffcc00; /* Darker yellow for hover */
+    color: #003366; /* Darker blue text color */
+}
+
+.hero .btn.primary {
+    margin-right: 1rem; /* Add spacing for primary buttons in the hero section */
+}
+
+.hero .btn.secondary {
+    background-color: #ffffff; /* White background for secondary button */
+    color: #0056b3; /* Blue text */
+    border: 1px solid #0056b3; /* Add border for contrast */
+}
+
+.hero .btn.secondary:hover {
+    background-color: #f0f0f0; /* Slightly darker white for hover */
+    color: #003366; /* Darker blue text for hover */
 }
 
 /* Hero Section */
@@ -85,20 +103,8 @@ header {
     margin-bottom: 2rem;
 }
 
-.cta-buttons .btn {
-    display: inline-block;
-    text-decoration: none;
-    margin-right: 1rem;
-    color: #0056b3;
-    background-color: #ffd700;
-    padding: 0.75rem 1.5rem;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-}
-
-.cta-buttons .btn:hover {
-    background-color: #ffcc00;
+.cta-buttons {
+    display: flex;
 }
 
 .hero-image img {
@@ -156,48 +162,18 @@ footer {
 .footer-content {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
+    justify-content: center;
+    gap: 1rem;
 }
 
 .footer-content img {
     height: 50px;
-    margin-bottom: 1rem;
+    margin-bottom: 10px;
 }
 
-.footer-links ul {
-    list-style: none;
-}
-
-.footer-links li a {
-    color: #ffd700;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-.footer-links li a:hover {
-    color: #ffcc00;
-}
-
-.footer-contact p {
-    margin-bottom: 0.5rem;
-}
-
-.social-media a {
-    margin: 0 0.5rem;
-    display: inline-block;
-}
-
-.social-media img {
-    height: 30px;
-    transition: transform 0.3s ease;
-}
-
-.social-media img:hover {
-    transform: scale(1.1);
+.footer-content p {
+    margin: 0;
+    font-size: 1rem;
 }
 
 /* Responsive Design */
