@@ -8,7 +8,7 @@
 
 /* Body Background */
 body {
-    background: url(../images/background.png) center / cover fixed, #f8f9fa;
+    background: url(../images/background.png) center / cover fixed;
     font-family: 'Arial', sans-serif;
     margin: 0;
 }
@@ -48,14 +48,15 @@ header {
 
 /* Buttons */
 .btn {
-    display: inline-block;
-    text-decoration: none;
+    display: block;
+    width: 100%;
+    text-align: center;
     font-size: 1rem;
     font-weight: bold;
-    padding: 0.75rem 1.5rem;
+    padding: 12px;
     border-radius: 5px;
+    cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
-    text-align: center;
 }
 
 .btn-primary {
@@ -75,7 +76,14 @@ header {
 
 .btn-secondary:hover {
     background-color: #4dabf7;
-    color: #003366;
+}
+
+/* Vertical Line Divider */
+.vertical-line {
+    width: 4px;
+    height: 300px;
+    background-color: #0f0f0f; /* Black vertical line */
+    margin: 0 50px;
 }
 
 /* Footer */
