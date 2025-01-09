@@ -47,6 +47,33 @@ header {
 }
 
 /* Buttons */
+/* Login Button */
+.btn-login {
+    width: 100%; /* Center the button */
+    max-width: 200px; /* Limit the width for aesthetic purposes */
+    margin: 0 auto; /* Center horizontally */
+    display: block;
+}
+
+/* Password Reset Button */
+#password-reset {
+    background-color: #0056b3; /* Blue background */
+    color: #fff; /* White text */
+    padding: 0.75rem 1.5rem;
+    text-align: center;
+    display: block;
+    width: 100%; /* Full-width button */
+    max-width: 200px; /* Limit the width for aesthetic purposes */
+    margin: 10px auto; /* Center horizontally with margin */
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#password-reset:hover {
+    background-color: #4dabf7; /* Light blue for hover */
+    color: #003366; /* Darker text for contrast */
+}
 .btn {
     display: inline-block;
     text-decoration: none;
