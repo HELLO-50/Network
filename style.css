@@ -75,7 +75,10 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 2rem;
-    background: linear-gradient(135deg, #0056b3 50%, #f9f9f9 50%);
+    background-image: url(Image/Hi.png);
+    background-size: cover; 
+    background-position: center; 
+    background-attachment: fixed;
     color: #fff;
     min-height: 80vh;
 }
