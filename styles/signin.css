@@ -63,13 +63,6 @@ header {
     color: #003366; /* Darker blue text for hover */
 }
 
-#cancelbtn {
-    width: 45%;
-    background-color: #ffffff; /* White background for cancel button */
-    color: #333;
-    border: 1px solid #ccc;
-}
-
 #cancelbtn:hover {
     background-color: #11b8e2;
     color: #fff;
