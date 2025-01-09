@@ -8,10 +8,6 @@
 
 /* Body */
 body {
-    background-image: url(Image/Hi.png);
-    background-size: cover; 
-    background-position: center; 
-    background-attachment: fixed;
     font-size: 16px;
     line-height: 1.5;
     color: #333;
@@ -40,18 +36,14 @@ header {
     gap: 1rem;
 }
 
-.nav-links li {
-    margin: 0;
-}
-
-.nav-links a {
+.nav-links li a {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
 }
 
-.nav-links a:hover {
+.nav-links li a:hover {
     color: #445c7b;
 }
 
@@ -75,10 +67,7 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 2rem;
-    background-image: url(Image/Hi.png);
-    background-size: cover; 
-    background-position: center; 
-    background-attachment: fixed;
+    background: url(images/Hi.png) center / cover fixed;
     min-height: 80vh;
 }
 
@@ -96,7 +85,7 @@ header {
     margin-bottom: 2rem;
 }
 
-.hero .cta-buttons .btn {
+.cta-buttons .btn {
     display: inline-block;
     text-decoration: none;
     margin-right: 1rem;
@@ -108,7 +97,7 @@ header {
     transition: background-color 0.3s ease;
 }
 
-.hero .cta-buttons .btn:hover {
+.cta-buttons .btn:hover {
     background-color: #ffcc00;
 }
 
@@ -182,18 +171,14 @@ footer {
     list-style: none;
 }
 
-.footer-links li {
-    margin-bottom: 0.5rem;
-}
-
-.footer-links a {
+.footer-links li a {
     color: #ffd700;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
 }
 
-.footer-links a:hover {
+.footer-links li a:hover {
     color: #ffcc00;
 }
 
