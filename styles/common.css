@@ -8,7 +8,7 @@
 
 /* Body Background */
 body {
-    background: url(../images/background.png) center / cover fixed;
+    background: url(../images/background.png) center / cover fixed, #f8f9fa;
     font-family: 'Arial', sans-serif;
     margin: 0;
 }
@@ -44,46 +44,6 @@ header {
 
 .nav-links li a:hover {
     color: #ffd700;
-}
-
-/* Buttons */
-.btn {
-    display: block;
-    width: 100%;
-    text-align: center;
-    font-size: 1rem;
-    font-weight: bold;
-    padding: 12px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.btn-primary {
-    background-color: #ffd700;
-    color: #0056b3;
-}
-
-.btn-primary:hover {
-    background-color: #ffcc00;
-    color: #003366;
-}
-
-.btn-secondary {
-    background-color: #0056b3;
-    color: #fff;
-}
-
-.btn-secondary:hover {
-    background-color: #4dabf7;
-}
-
-/* Vertical Line Divider */
-.vertical-line {
-    width: 4px;
-    height: 300px;
-    background-color: #0f0f0f; /* Black vertical line */
-    margin: 0 50px;
 }
 
 /* Footer */
