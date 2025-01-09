@@ -67,7 +67,7 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 2rem;
-    background: url(images\background.png) center / cover fixed;
+    background: url(images/background.png) center / cover fixed;
     min-height: 80vh;
 }
 
