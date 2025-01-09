@@ -89,18 +89,21 @@ header {
     min-height: 80vh;
 }
 
-.hero-content {
-    max-width: 50%;
+.hero-content h1 {
+    font-size: 3rem; /* Match size from Signin */
+    color: #0056b3; /* Blue color for heading */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Shadow effect */
+    line-height: 1.2; /* Line spacing */
 }
 
-.hero h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+.hero-content .gateway {
+    color: #0056b3; /* Same blue color for Gateway */
 }
 
-.hero p {
-    font-size: 1.25rem;
-    margin-bottom: 2rem;
+.hero-content p {
+    font-size: 1.5rem; /* Match font size */
+    color: #228b22; /* Green color for subtext */
+    margin-top: 10px; /* Add space between heading and subtext */
 }
 
 .cta-buttons {
