@@ -3,9 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Register</title>
+    <link rel="icon" href="images/education.png" type="image/png">
+    <link rel="stylesheet" href="styles/signup.css">
 </head>
 <body>
-    
+      <!-- Header Section -->
+      <header>
+        <div class="logo">
+            <img src="images/education.png" alt="Education Gateway Logo">
+        </div>
+        <nav>
+            <ul class="nav-links">
+
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="support.html">Support</a></li>
+                <li><a href="mailto:educationgateway44@gmail.com">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="header-buttons">
+            <a href="Signin.html" class="header-btn header-btn-primary">Register</a>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Left Section -->
+        <div class="left-text">
+            <h1>Education <br> <span class="gateway">Gateway</span></h1>
+            <p>Your Gateway To Academic Success</p>
+        </div>
+
+        <!-- Vertical Divider -->
+        <div class="vertical-line"></div>
+          <!--login form Section-->
+        <div class="Register-form">
+            <h2>Sign-in</h2>
+            <form action="/Register" method="post">
+                <div class="form-group">
+                    <label for="Fname">First name</label>
+                    <input id="Fname" type="text" name="Fname" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="Lname">Last name</label>
+                    <input id="Lname" type="text" name="Lname" required>
+                </div>
+            
+                <div class="form-group">
+                    <label for="StId">Student Id</label>
+                    <input id="StId" type="number" name="StId" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input id="email" type="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="Password">Password</label>
+                    <input id="Password" type="password" name="Password" minlength="8" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="ConfirmPassword">Confirm Password</label>
+                    <input id="ConfirmPassword" type="password" name="ConfirmPassword" required>
+                </div>
+                <span id="error" class="error"></span>
+
+                <div class="form-action">
+                    <button type="submit" class=" btn btn-primary">Signup</button>
+                 </div>
+        </form>   
+    </div>
+
+   <!--footer section-->
+    <footer>
+        <div class="footer-content">
+            <img src="images/education.png" alt="Education Gateway Logo">
+            <p>All Rights Reserved @ 2025</p>
+        </div>
+    </footer>
 </body>
 </html>
