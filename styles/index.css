@@ -3,26 +3,42 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 4rem 2rem;
+    padding: 2rem;
     color: #fff;
     min-height: 80vh;
-    border-radius: 10px;
 }
 
 .hero-content {
     max-width: 50%;
-    padding: 2rem;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .hero h1 {
     font-size: 3rem;
     color: #0056b3;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    line-height: 1.2;
     margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    color: #228b22;
+}
+
+.cta-buttons .btn {
+    display: inline-block;
+    text-decoration: none;
+    color: #0056b3;
+    background-color: #ffd700;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.cta-buttons .btn:hover {
+    background-color: #ffcc00;
+    color: #003366;
 }
 
 .hero-image img {

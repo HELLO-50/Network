@@ -35,3 +35,20 @@
     outline: none;
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
+
+#password-reset {
+    background-color: #0056b3;
+    color: #fff;
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#password-reset:hover {
+    background-color: #4dabf7;
+}
