@@ -41,6 +41,16 @@ header {
     font-weight: bold;
     transition: color 0.3s ease;
 }
+/* Highlight active menu item */
+.nav-links a.active {
+    font-weight: bold;
+    color: #ffd700; /* Matching your hover color */
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
 
 .nav-links li a:hover {
     color: #ffd700;
