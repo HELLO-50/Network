@@ -8,13 +8,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Smooth scrolling for hero buttons
-    const ctaButtons = document.querySelectorAll('.cta-buttons a');
+    let ctaButtons = document.querySelectorAll('.cta-buttons a');
     ctaButtons.forEach(button => {
         button.addEventListener('click', event => {
             event.preventDefault();
             const targetId = button.getAttribute('href').substring(1);
             const targetElement = document.getElementById(targetId);
-            targetElement.scrollIntoView({ behavior: 'smooth' });
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+            } else {
+                console.error(`Element with ID ${targetId} not found.`);
+            }
+            
         });
     });
 
