@@ -91,7 +91,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Simulate form submission
             alert('Registration successful!');
-           
+            
+        });
     }
 });
 
