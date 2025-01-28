@@ -42,8 +42,6 @@ document.addEventListener('DOMContentLoaded', function() {
             } else {
                 // Simulate form submission
                 alert('Logging in...');
-                // You can replace this with actual form submission via AJAX or fetch
-                // e.g., using fetch() or XMLHttpRequest to send data to the server
             }
         });
     }
@@ -93,9 +91,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Simulate form submission
             alert('Registration successful!');
-            // You can replace this with actual form submission via AJAX or fetch
-            // e.g., using fetch() or XMLHttpRequest to send data to the server
-        });
+           
     }
 });
 
