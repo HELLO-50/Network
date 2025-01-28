@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="styles/common.css">
+    <link rel="stylesheet" href="styles/stu-dashboard.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="menu">
+        <ul>
+            <li class="profile">
+                <a href="profile.html">
+                    <div class="img-box">
+                        <img src="images/Profile.jpg" alt="profile picture">
+                    </div>
+                </a>
+                <h2>Name</h2>
+            </li>
+            <li><a class="active" href="#">Courses</a></li>
+            <li><a href="#">Grades</a></li>
+            <li><a href="#">Assignments</a></li>
+            <li><a href="#">Announcements</a></li>
+            <li><a href="#">To-Do List</a></li>
+            <li class="log-out"><a href="index.html">Log Out</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Dashboard Content -->
+    <div class="dashboard-content">
+        <div class="dashboard-header">
+            <h1>Welcome, Name</h1>
+            <p>Your academic progress to succes</p>
+        </div>
+
+        <div class="dashboard-sections">
+            <!-- Courses Section -->
+            <div class="section">
+                <h3>Courses</h3>
+                <div class="section-content">
+                    <ul>
+                        <li><a href="#">Course 1</a></li>
+                        <li><a href="#">Course 2</a></li>
+                        <li><a href="#">Course 3</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Assignments Section -->
+            <div class="section">
+                <h3>Assignments</h3>
+                <div class="section-content">
+                    <ul>
+                        <li><a href="#">Assignment 1 - Due in 2 days</a></li>
+                        <li><a href="#">Assignment 2 - Due in 5 days</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Grades Section -->
+            <div class="section">
+                <h3>Grades</h3>
+                <div class="section-content">
+                    <ul>
+                        <li><a href="#">Course 1 - Grade: A</a></li>
+                        <li><a href="#">Course 2 - Grade: B+</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- To-Do List Section -->
+            <div class="section">
+                <h3>To-Do List</h3>
+                <div class="section-content">
+                    <ul>
+                        <li><a href="#">Complete Assignment 1</a></li>
+                        <li><a href="#">Attend Seminar</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Announcements Section -->
+            <div class="section">
+                <h3>Announcements</h3>
+                <div class="section-content">
+                    <ul>
+                        <li><a href="#">Midterm Exam Schedule</a></li>
+                        <li><a href="#">Course Project Guidelines</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="scripts/student.js"></script>
+</body>
+</html>

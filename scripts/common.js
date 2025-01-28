@@ -42,6 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
             } else {
                 // Simulate form submission
                 alert('Logging in...');
+
             }
         });
     }
