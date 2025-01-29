@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instructor Dashboard</title>
+    <link rel="stylesheet" href="styles/common.css">
+    <link rel="stylesheet" href="styles/inst-dashboard.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="menu">
+        <ul>
+            <li class="profile">
+                <a href="profile.html" id="profile-link">
+                    <div class="img-box">
+                        <img src="images/Profile.jpg" alt="profile picture">
+                    </div>
+                </a>
+                <h2>Instructor Name</h2>
+            </li>
+            <li><a class="active" href="#">Courses</a></li>
+            <li><a href="#">Activity Overview</a></li>
+            <li><a href="#">Gradebook</a></li>
+            <li><a href="#">Assignments</a></li>
+            <li><a href="#">Quizzes</a></li>
+            <li><a href="#">Resources</a></li>
+            <li><a href="#">Student Management</a></li>
+            <li><a href="#">Announcements</a></li>
+            <li class="log-out"><a href="signin.html">Log Out</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Dashboard Content -->
+    <div class="dashboard-content">
+        <div class="dashboard-header">
+            <h1>Welcome, Instructor Name</h1>
+            <p>Your academic tools to manage courses and students</p>
+        </div>
+
+        <div class="dashboard-sections">
+            <!-- Courses Management Section -->
+            <div class="section">
+                <h3>Courses Management</h3>
+                <div class="section-content">
+                    <ul>
+                        <li><a href="#">Course 1 - Ongoing</a></li>
+                        <li><a href="#">Course 2 - Completed</a></li>
+                        <li><a href="#">Course 3 - Ongoing</a></li>
+                        <li><a href="#">Create New Course</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Activity Overview Section -->
+            <div class="section">
+                <h3>Activity Overview</h3>
+                <div class="section-content">
+                    <ul>
+                        <li><a href="#">Assignment Submission - Course 1</a></li>
+                        <li><a href="#">Forum Post - Course 2</a></li>
+                        <li><a href="#">Student Query - Course 3</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Gradebook Section -->
+            <div class="section">
+                <h3>Gradebook</h3>
+                <div class="section-content">
+                    <ul>
+                        <li><a href="#">Course 1 - Gradebook</a></li>
+                        <li><a href="#">Course 2 - Gradebook</a></li>
+                        <li><a href="#">View Student Performance</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Assignments Section -->
+            <div class="section">
+                <h3>Assignments</h3>
+                <div class="section-content">
+                    <ul>
+                        <li><a href="#">Create New Assignment</a></li>
+                        <li><a href="#">Manage Assignment Deadlines</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Quizzes Section -->
+            <div class="section">
+                <h3>Quizzes</h3>
+                <div class="section-content">
+                    <ul>
+                        <li><a href="#">Create New Quiz</a></li>
+                        <li><a href="#">Manage Quizzes</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Resources Section -->
+            <div class="section">
+                <h3>Resources</h3>
+                <div class="section-content">
+                    <ul>
+                        <li><a href="#">Upload New Resource</a></li>
+                        <li><a href="#">Manage Course Materials</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Student Management Section -->
+            <div class="section">
+                <h3>Student Management</h3>
+                <div class="section-content">
+                    <ul>
+                        <li><a href="#">View Enrolled Students</a></li>
+                        <li><a href="#">Monitor Student Progress</a></li>
+                        <li><a href="#">Provide Feedback to Students</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Announcements Section -->
+            <div class="section">
+                <h3>Announcements</h3>
+                <div class="section-content">
+                    <ul>
+                        <li><a href="#">Post New Announcement</a></li>
+                        <li><a href="#">View Student Announcements</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/instructure.js"></script>
+</body>
+</html>
