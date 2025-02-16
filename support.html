@@ -1,1 +1,83 @@
-placeholder
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Get support and assistance for any issues you encounter on Education Gateway. Find answers to common questions and contact our support team.">
+    <title>Support - Education Gateway</title>
+    <link rel="icon" href="images/education.png" type="image/png">
+    <link rel="stylesheet" href="styles/support.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/education.png" alt="Education Gateway Logo" class="logo-image">
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About us</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="support.html" class="active">Support</a></li>
+                <li><a href="mailto:educationgateway44@gmail.com">Contact us</a></li>
+            </ul>
+        </nav>
+        <div class="header-buttons">
+            <a href="signin.html" class="header-btn header-btn-primary">Sign-in</a>
+            <a href="signup.html" class="header-btn header-btn-secondary">Register</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="support">
+            <h1>Support</h1>
+            <p>Need help? We're here to assist you! Browse through our frequently asked questions or contact our support team for personalized assistance.</p>
+            
+            <!-- FAQ Section -->
+            <section class="faq">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-item">
+                    <h3>How do I sign up for a course?</h3>
+                    <p>You can sign up for a course by visiting our <a href="courses.html">Courses</a> page, selecting the course you're interested in, and clicking the "Sign Up" button.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What payment methods are accepted?</h3>
+                    <p>We accept various payment methods, including credit cards, PayPal, and bank transfers. You can find more details on the payment options during the checkout process.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How can I contact customer support?</h3>
+                    <p>You can reach our customer support team by emailing us at <a href="mailto:educationgateway44@gmail.com">educationgateway44@gmail.com</a> or by using the contact form on our <a href="contact.html">Contact Us</a> page.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What is the refund policy?</h3>
+                    <p>We offer a 30-day money-back guarantee for all our courses. If you're not satisfied with a course, you can request a refund within 30 days of purchase.</p>
+                </div>
+            </section>
+
+            <!-- Contact Form -->
+            <section class="contact-form">
+                <h2>Contact Us</h2>
+                <form action="mailto:educationgateway44@gmail.com" method="post" enctype="text/plain">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                    
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </section>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <img src="images/education.png" alt="Education Gateway Logo">
+            <p>All Rights Reserved @ 2025</p>
+        </div>
+    </footer>
+</body>
+</html>
