@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (window.location.pathname.includes("admin/index.html")) {
         setupAdminLogin();
     } else if (window.location.pathname.includes("admin-dashboard.html")) {
+        enforceAdminAuth();
         loadAdminDashboard();
     }
 });
@@ -16,6 +17,8 @@ function setupAdminLogin() {
         const password = document.getElementById("adminPassword").value;
         const errorMsg = document.getElementById("adminLoginError");
 
+        errorMsg.textContent = ""; // Clear previous errors
+
         try {
             const response = await fetch("https://educationlife.pythonanywhere.com/admin/login", {
                 method: "POST",
@@ -24,14 +27,27 @@ function setupAdminLogin() {
             });
 
             const result = await response.json();
+
             if (response.ok) {
-                localStorage.setItem("adminToken", result.token);
-                window.location.href = "admin-dashboard.html";  // Redirects to dashboard
+                console.log("Login Successful:", result);
+                localStorage.setItem("adminToken", result.token);  // Save token
+                window.location.href = "admin-dashboard.html";  // Redirect to dashboard
             } else {
-                errorMsg.textContent = result.error || "Invalid login";
+                console.error("Login Failed:", result);
+                errorMsg.textContent = result.error || "Invalid login credentials";
             }
         } catch (error) {
-            errorMsg.textContent = "Server error. Try again.";
+            console.error("Error logging in:", error);
+            errorMsg.textContent = "Server error. Try again later.";
         }
     });
+}
+
+function enforceAdminAuth() {
+    const adminToken = localStorage.getItem("adminToken");
+
+    if (!adminToken) {
+        alert("Access Denied! Please log in as Admin.");
+        window.location.href = "index.html";  // Redirect to login page
+    }
 }

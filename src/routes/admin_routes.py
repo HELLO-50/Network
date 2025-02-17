@@ -6,28 +6,33 @@ admin_bp = Blueprint("admin", __name__)
 def get_admin_password():
     try:
         with open("/home/Educationlife/Network/admin.sec", "r") as f:
-            return f.read().strip()  # Read and remove extra spaces
+            return f.read().strip()
     except FileNotFoundError:
+        print("Error: Admin password file is missing!")
         return None
-    
+
 @admin_bp.route("/login", methods=["POST"])
 def admin_login():
-    data = request.json
-    username = data.get("username")  # Admin username
-    password = data.get("password")  # Entered password
+    try:
+        data = request.json
+        username = data.get("username")
+        password = data.get("password")
 
-    # Fixed admin username
-    ADMIN_USERNAME = "admin"
+        ADMIN_USERNAME = "admin"
+        correct_hashed_password = get_admin_password()
+
+        if not correct_hashed_password:
+            return jsonify({"error": "Admin password file missing"}), 500
+
+        if username != ADMIN_USERNAME or not check_password_hash(correct_hashed_password, password):
+            return jsonify({"error": "Invalid credentials"}), 401
+
+        return jsonify({"message": "Login successful!", "token": "admin-token"})
+
+    except Exception as e:
+        print("Admin Login Error:", str(e))
+        return jsonify({"error": "Internal Server Error"}), 500
     
-    # Load the correct hashed password from the file
-    correct_hashed_password = get_admin_password()
-
-    # Authentication check
-    if username != ADMIN_USERNAME or not correct_hashed_password or not check_password_hash(correct_hashed_password, password):
-        return jsonify({"error": "Invalid credentials"}), 401
-
-    return jsonify({"message": "Login successful", "token": "admin-token"})
-
 @admin_bp.route("/stats", methods=["GET"])
 def admin_stats():
     student_count = User.query.filter_by(role="student").count()
