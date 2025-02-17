@@ -25,6 +25,12 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // 3. Fetch Courses
+    document.addEventListener('DOMContentLoaded', function () {
+        if (window.location.pathname.includes('courses.html')) {
+            fetchCourses();
+        }
+    });
+    
     async function fetchCourses() {
         try {
             const response = await fetch('https://Educationlife.pythonanywhere.com/courses/');
