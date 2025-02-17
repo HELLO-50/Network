@@ -8,17 +8,24 @@ from email.mime.text import MIMEText
 auth_bp = Blueprint('auth', __name__)
 
 def generate_university_id():
-    """Generate a unique university ID"""
-    return "EG" + str(random.randint(100000, 999999))
+    """Generate a new University ID starting from EG000100 and incrementing"""
+    last_user = User.query.order_by(User.university_id.desc()).first()
+    
+    if last_user and last_user.university_id.startswith("EG"):
+        new_id = int(last_user.university_id[2:]) + 1  # Extract number and increment
+    else:
+        new_id = 100  # Start from 100 if no users exist
+
+    return f"EG{new_id:06d}"  # Format as EG000100, EG000101, etc.
 
 def send_email(to_email, university_id):
     """Send an email with the generated university ID"""
-    sender_email = "your-email@example.com"
-    sender_password = "your-email-password"
+    sender_email = "your-email@example.com" # add a gmail account
+    sender_password = "your-email-password" # add the gmail account password
     smtp_server = "smtp.gmail.com"
     smtp_port = 587
 
-    subject = "University ID Registration Confirmation"
+    subject = "Education Gateway Registration Confirmation"
     body = f"Dear student,\n\nYour registration was successful!\nYour University ID is: {university_id}\n\nBest Regards,\nUniversity Admin"
 
     msg = MIMEText(body)
@@ -72,7 +79,7 @@ def register():
     # Send confirmation email
     send_email(email, university_id)
 
-    return jsonify({"message": "Registration successful! Check your email for your University ID.", "university_id": university_id})
+    return jsonify({"message": "EG Registration successful! Check your email for your University ID.", "university_id": university_id})
 
 @auth_bp.route('/login', methods=['POST'])
 def login():
