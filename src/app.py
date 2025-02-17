@@ -10,7 +10,7 @@ from routes.admin_routes import admin_bp
 
 app = Flask(__name__)
 # CORS(app)
-CORS(app, resources={r"/*": {"origins": ["*", "https://hello-50.github.io"]}})
+# CORS(app, resources={r"/*": {"origins": ["*", "https://hello-50.github.io"]}})
 app.config.from_object(Config)
 
 CORS(app, resources={r"/*": {"origins": "*"}})  # 
