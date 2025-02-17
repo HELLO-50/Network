@@ -30,38 +30,56 @@ document.addEventListener('DOMContentLoaded', function() {
             fetchCourses();
         }
     });
-    
-    async function fetchCourses() {
-        try {
-            const response = await fetch('https://Educationlife.pythonanywhere.com/courses/');
-            const data = await response.json();
-            console.log('Fetched Courses:', data.courses);
-    
-            let courseList = document.getElementById('course-list');
-            if (!courseList) {
-                console.error('Course list container not found.');
-                return;
-            }
-    
-            courseList.innerHTML = ''; 
-    
-            data.courses.forEach(course => {
-                let courseItem = document.createElement('div');
-                courseItem.classList.add('course-item');
-    
-                courseItem.innerHTML = `
-                    <h2>${course.title}</h2>
-                    <p>${course.description}</p>
-                    <a href="#" class="btn btn-primary">Learn More</a>
-                `;
-    
-                courseList.appendChild(courseItem);
-            });
-    
-        } catch (error) {
-            console.error('Error fetching courses:', error);
-        }
+
+document.addEventListener('DOMContentLoaded', function () {
+    if (window.location.pathname.includes('courses.html')) {
+        fetchCourses();
     }
+});
+
+async function fetchCourses() {
+    console.log("Fetching courses from API...");
+
+    try {
+        const response = await fetch('https://Educationlife.pythonanywhere.com/courses/');
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        console.log("Fetched Courses:", data);
+
+        let courseList = document.getElementById('course-list');
+        if (!courseList) {
+            console.error("Course list container not found!");
+            return;
+        }
+
+        courseList.innerHTML = ''; // Clear previous content
+
+        if (!data.courses || data.courses.length === 0) {
+            courseList.innerHTML = "<p>No courses available.</p>";
+            return;
+        }
+
+        data.courses.forEach(course => {
+            let courseItem = document.createElement('div');
+            courseItem.classList.add('course-item');
+
+            courseItem.innerHTML = `
+                <h2>${course.title}</h2>
+                <p>${course.description}</p>
+                <a href="#" class="btn btn-primary">Learn More</a>
+            `;
+
+            courseList.appendChild(courseItem);
+        });
+
+    } catch (error) {
+        console.error("Error fetching courses:", error);
+    }
+}
 
     // Run course fetch if on the courses page
     if (window.location.pathname === '/courses.html') {
