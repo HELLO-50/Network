@@ -36,17 +36,27 @@ def admin_login():
     
 @admin_bp.route("/stats", methods=["GET"])
 def admin_stats():
-    student_count = User.query.filter_by(role="student").count()
-    course_count = Course.query.count()
-    students = User.query.filter_by(role="student").all()
+    try:
+        # Count total students and courses from the database
+        total_students = Student.query.count()
+        total_courses = Course.query.count()
 
-    student_list = [{"university_id": s.university_id, "first_name": s.first_name, "last_name": s.last_name} for s in students]
+        # Fetch all students (limit 10 for performance)
+        students = Student.query.limit(10).all()
+        student_list = [
+            {"university_id": s.university_id, "first_name": s.first_name, "last_name": s.last_name}
+            for s in students
+        ]
 
-    return jsonify({
-        "total_students": student_count,
-        "total_courses": course_count,
-        "students": student_list
-    })
+        return jsonify({
+            "total_students": total_students,
+            "total_courses": total_courses,
+            "students": student_list
+        })
+
+    except Exception as e:
+        print("Admin Stats Error:", str(e))  # Logs error
+        return jsonify({"error": "Failed to fetch statistics"}), 500
 
 @admin_bp.route("/change-role", methods=["POST"])
 def change_role():
