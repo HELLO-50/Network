@@ -14,3 +14,10 @@ def student_progress():
     progress_list = [{"course_id": p.course_id, "module_completed": p.module_completed, "completed_at": p.completed_at} for p in progress]
 
     return jsonify({"progress": progress_list})
+
+@student_bp.route('/', methods=['GET'])
+def get_students():
+    students = User.query.filter_by(role="student").all()
+    student_list = [{"university_id": s.university_id, "first_name": s.first_name, "last_name": s.last_name, "email": s.email} for s in students]
+
+    return jsonify({"students": student_list})

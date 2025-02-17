@@ -18,3 +18,9 @@ def add_course():
     db.session.commit()
 
     return jsonify({"message": "Course added successfully!", "course_id": new_course.course_id})
+
+@course_bp.route('/', methods=['GET'])
+def get_courses():
+    courses = Course.query.all()
+    course_list = [{"course_id": c.course_id, "title": c.title, "description": c.description} for c in courses]
+    return jsonify({"courses": course_list})
