@@ -9,7 +9,8 @@ from routes.student_routes import student_bp
 from routes.admin_routes import admin_bp
 
 app = Flask(__name__)
-CORS(app)
+# CORS(app)
+CORS(app, resources={r"/*": {"origins": ["*", "https://hello-50.github.io"]}})
 app.config.from_object(Config)
 
 CORS(app, resources={r"/*": {"origins": "*"}})  # 
