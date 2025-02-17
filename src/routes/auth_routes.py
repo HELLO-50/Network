@@ -8,15 +8,22 @@ from email.mime.text import MIMEText
 auth_bp = Blueprint('auth', __name__)
 
 def generate_university_id():
-    """Generate a new University ID starting from EG000100 and incrementing"""
+    """Generate a unique University ID starting from EG000100 and incrementing"""
     last_user = User.query.order_by(User.university_id.desc()).first()
     
     if last_user and last_user.university_id.startswith("EG"):
         new_id = int(last_user.university_id[2:]) + 1  # Extract number and increment
     else:
-        new_id = 100  # Start from 100 if no users exist
+        new_id = 100  # Start from EG000100 if no users exist
 
-    return f"EG{new_id:06d}"  # Format as EG000100, EG000101, etc.
+    while True:
+        university_id = f"EG{new_id:06d}"  # Format as EG000100, EG000101, etc.
+        existing_user = User.query.filter_by(university_id=university_id).first()
+        
+        if not existing_user:
+            return university_id  # Return only if it's unique
+
+        new_id += 1  # Try the next ID if the current one already exists
 
 def send_email(to_email, university_id):
     """Send an email with the generated university ID"""
