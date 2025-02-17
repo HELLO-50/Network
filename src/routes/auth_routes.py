@@ -49,7 +49,7 @@ def send_email(to_email, university_id):
     except Exception as e:
         print(f"Failed to send email: {e}")
 
-@auth_bp.route('/register', methods=['POST'])
+@auth_bp.route('/auth/register', methods=['POST'])
 def register():
     data = request.json
     email = data.get('email')
@@ -88,7 +88,7 @@ def register():
 
     return jsonify({"message": "EG Registration successful! Check your email for your University ID.", "university_id": university_id})
 
-@auth_bp.route('/login', methods=['POST'])
+@auth_bp.route('/auth/login', methods=['POST'])
 def login():
     data = request.json
     university_id = data.get('university_id')

@@ -19,7 +19,7 @@ def add_course():
 
     return jsonify({"message": "Course added successfully!", "course_id": new_course.course_id})
 
-@course_bp.route('/', methods=['GET'])
+@course_bp.route('/courses', methods=['GET'])
 def get_courses():
     courses = Course.query.all()
     course_list = [{"course_id": c.course_id, "title": c.title, "description": c.description} for c in courses]

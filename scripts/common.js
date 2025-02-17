@@ -41,7 +41,7 @@ async function fetchCourses() {
     console.log("Fetching courses from API...");
 
     try {
-        const response = await fetch('https://Educationlife.pythonanywhere.com/courses/');
+        const response = await fetch('https://educationlife.pythonanywhere.com/courses/');
         
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
@@ -105,7 +105,7 @@ async function fetchCourses() {
             }
     
             try {
-                const response = await fetch('https://Educationlife.pythonanywhere.com/auth/login', {
+                const response = await fetch('https://educationlife.pythonanywhere.com/auth/login', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ university_id: universityId, password: password })
@@ -166,7 +166,7 @@ async function fetchCourses() {
             }
     
             try {
-                const response = await fetch('https://Educationlife.pythonanywhere.com/auth/register', {
+                const response = await fetch('https://educationlife.pythonanywhere.com/auth/register', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
