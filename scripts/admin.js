@@ -2,47 +2,23 @@ document.addEventListener("DOMContentLoaded", function () {
     if (window.location.pathname.includes("admin/index.html")) {
         setupAdminLogin();
     } else if (window.location.pathname.includes("admin-dashboard.html")) {
-        enforceAdminAuth();
+        enforceAdminAuth();  // ✅ Ensure this function exists
         loadAdminDashboard();
     }
 });
 
-function setupAdminLogin() {
-    const loginForm = document.getElementById("adminLoginForm");
+// function to enforce authentication
+function enforceAdminAuth() {
+    const adminToken = localStorage.getItem("adminToken");
 
-    loginForm.addEventListener("submit", async function (e) {
-        e.preventDefault();
-
-        const username = document.getElementById("adminUsername").value;
-        const password = document.getElementById("adminPassword").value;
-        const errorMsg = document.getElementById("adminLoginError");
-
-        errorMsg.textContent = ""; // Clear previous errors
-
-        try {
-            const response = await fetch("https://educationlife.pythonanywhere.com/admin/login", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ username, password })
-            });
-
-            const result = await response.json();
-
-            if (response.ok) {
-                console.log("Login Successful:", result);
-                localStorage.setItem("adminToken", result.token);
-                window.location.href = "admin-dashboard.html";
-            } else {
-                console.error("Login Failed:", result);
-                errorMsg.textContent = result.error || "Invalid login credentials";
-            }
-        } catch (error) {
-            console.error("Error logging in:", error);
-            errorMsg.textContent = "Server error. Try again later.";
-        }
-    });
+    if (!adminToken) {
+        alert("Access Denied! Please log in as Admin.");
+        window.location.href = "index.html";  // Redirect to login page
+        return;
+    }
 }
 
+// load the admin dashboard
 async function loadAdminDashboard() {
     const adminToken = localStorage.getItem("adminToken");
 
@@ -53,7 +29,7 @@ async function loadAdminDashboard() {
     }
 
     try {
-        // Verify session
+        // Verify session with backend
         const verifyResponse = await fetch("https://educationlife.pythonanywhere.com/admin/verify", {
             method: "GET",
             headers: { "Authorization": adminToken }
