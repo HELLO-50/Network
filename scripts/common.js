@@ -30,17 +30,28 @@ document.addEventListener('DOMContentLoaded', function() {
             const response = await fetch('https://Educationlife.pythonanywhere.com/courses/');
             const data = await response.json();
             console.log('Fetched Courses:', data.courses);
-
+    
             let courseList = document.getElementById('course-list');
-            if (courseList) {
-                courseList.innerHTML = '';
-
-                data.courses.forEach(course => {
-                    let courseItem = document.createElement('li');
-                    courseItem.textContent = course;
-                    courseList.appendChild(courseItem);
-                });
+            if (!courseList) {
+                console.error('Course list container not found.');
+                return;
             }
+    
+            courseList.innerHTML = ''; 
+    
+            data.courses.forEach(course => {
+                let courseItem = document.createElement('div');
+                courseItem.classList.add('course-item');
+    
+                courseItem.innerHTML = `
+                    <h2>${course.title}</h2>
+                    <p>${course.description}</p>
+                    <a href="#" class="btn btn-primary">Learn More</a>
+                `;
+    
+                courseList.appendChild(courseItem);
+            });
+    
         } catch (error) {
             console.error('Error fetching courses:', error);
         }
