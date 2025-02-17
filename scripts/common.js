@@ -91,67 +91,66 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 5. Registration Form
     if (window.location.pathname === '/signup.html') {
-        const registerForm = document.querySelector('form');
-
+        const registerForm = document.getElementById('registerForm');
+    
         registerForm.addEventListener('submit', async function(e) {
             e.preventDefault();
-
+    
             const firstName = document.getElementById('Fname').value;
             const lastName = document.getElementById('Lname').value;
-            const studentId = document.getElementById('StId').value;
             const email = document.getElementById('email').value;
             const password = document.getElementById('Password').value;
             const confirmPassword = document.getElementById('ConfirmPassword').value;
             const errorMessage = document.getElementById('error');
-
-            errorMessage.textContent = '';
-
-            if (!firstName || !lastName || !studentId || !email || !password || !confirmPassword) {
+    
+            errorMessage.textContent = ''; // Clear previous errors
+    
+            if (!firstName || !lastName || !email || !password || !confirmPassword) {
                 errorMessage.textContent = 'Please fill in all fields.';
                 return;
             }
-
+    
             if (password !== confirmPassword) {
                 errorMessage.textContent = 'Passwords do not match.';
                 return;
             }
-
+    
+            // Validate email format
             const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
             if (!emailPattern.test(email)) {
                 errorMessage.textContent = 'Please enter a valid email address.';
                 return;
             }
-
+    
             if (password.length < 8) {
                 errorMessage.textContent = 'Password must be at least 8 characters long.';
                 return;
             }
-
+    
             try {
                 const response = await fetch('https://Educationlife.pythonanywhere.com/auth/register', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
-                        university_id: studentId,
                         first_name: firstName,
                         last_name: lastName,
                         email: email,
                         password: password
                     })
                 });
-
+    
                 const result = await response.json();
-
+    
                 if (response.ok) {
-                    alert('Registration successful! You can now log in.');
+                    alert(`Registration successful! Your University ID is sent to your email.`);
                     window.location.href = 'signin.html';
                 } else {
-                    errorMessage.textContent = result.message || 'Registration failed';
+                    errorMessage.textContent = result.error || 'Registration failed';
                 }
             } catch (error) {
                 console.error('Error registering:', error);
                 errorMessage.textContent = 'Server error. Try again later.';
             }
         });
-    }
+    }    
 });
