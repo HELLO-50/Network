@@ -28,7 +28,7 @@ def generate_university_id():
 def send_email(to_email, university_id):
     """Send an email with the generated university ID"""
     sender_email = "educationgateway44@gmail.com" # add a gmail account
-    sender_password = "E-learnin12" # add the gmail account password
+    sender_password = "imvdxbqmbzvlqjab" # add the gmail account password
     smtp_server = "smtp.gmail.com"
     smtp_port = 587
 
