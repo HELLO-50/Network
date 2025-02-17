@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // 3. Fetch Courses from Flask API
+    // 3. Fetch Courses
     async function fetchCourses() {
         try {
             const response = await fetch('https://Educationlife.pythonanywhere.com/courses/');
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
         fetchCourses();
     }
 
-    // 4. Login Form (Now Uses Flask API)
+    // 4. Login Form
     if (window.location.pathname === '/signin.html') {
         const loginForm = document.querySelector('form');
 
@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // 5. Registration Form (Now Uses Flask API)
+    // 5. Registration Form
     if (window.location.pathname === '/signup.html') {
         const registerForm = document.querySelector('form');
 
