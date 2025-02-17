@@ -5,7 +5,7 @@ admin_bp = Blueprint("admin", __name__)
 
 def get_admin_password():
     try:
-        with open("/home/your-username/admin_pass.txt", "r") as f:
+        with open("/home/Educationlife/Network/admin.sec", "r") as f:
             return f.read().strip()  # Read and remove extra spaces
     except FileNotFoundError:
         return None
