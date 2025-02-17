@@ -1,5 +1,5 @@
 from flask import Flask
-from flask_cors import CORS  # ✅ Import CORS
+from flask_cors import CORS
 from config import Config
 from models import db
 from flask_migrate import Migrate
