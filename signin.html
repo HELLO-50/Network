@@ -42,7 +42,7 @@
         <!-- Login Form Section -->
         <div class="login-form">
             <h2>Sign-in</h2>
-            <form action="/Login" method="post">
+            <form id="loginForm">
                 <div class="form-group">
                     <label for="univid">University ID</label>
                     <input id="univid" type="text" name="univid" required>
@@ -53,8 +53,11 @@
                     <input id="Password" type="password" name="Password" minlength="8" required>
                 </div>
 
+                <!-- Error Message Display -->
+                <p id="loginError" style="color: red;"></p>
+
                 <div class="form-actions">
-                    <button type="submit" class=" btn btn-primary">Login</button>
+                    <button type="submit" class="btn btn-primary">Login</button>
                 </div>
 
                 <div class="form-links">

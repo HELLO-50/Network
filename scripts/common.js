@@ -53,41 +53,44 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 4. Login Form
     if (window.location.pathname === '/signin.html') {
-        const loginForm = document.querySelector('form');
-
+        const loginForm = document.getElementById('loginForm');
+    
         loginForm.addEventListener('submit', async function(e) {
-            e.preventDefault(); // Prevent form submission
-
-            const studentId = document.getElementById('univid').value;
+            e.preventDefault();
+    
+            const universityId = document.getElementById('univid').value;
             const password = document.getElementById('Password').value;
-
-            if (!studentId || !password) {
-                alert('Please fill in both fields');
+            const errorMessage = document.getElementById('loginError');
+    
+            errorMessage.textContent = ''; // Clear previous errors
+    
+            if (!universityId || !password) {
+                errorMessage.textContent = 'Please fill in both fields';
                 return;
             }
-
+    
             try {
                 const response = await fetch('https://Educationlife.pythonanywhere.com/auth/login', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ university_id: studentId, password: password })
+                    body: JSON.stringify({ university_id: universityId, password: password })
                 });
-
+    
                 const result = await response.json();
-
+    
                 if (response.ok) {
                     alert('Login successful!');
                     localStorage.setItem('user', JSON.stringify(result)); // Save user info
                     window.location.href = 'dashboard.html';
                 } else {
-                    alert(result.message || 'Login failed');
+                    errorMessage.textContent = result.error || 'Invalid login credentials';
                 }
             } catch (error) {
                 console.error('Error logging in:', error);
-                alert('Server error. Try again later.');
+                errorMessage.textContent = 'Server error. Try again later.';
             }
         });
-    }
+    }      
 
     // 5. Registration Form
     if (window.location.pathname === '/signup.html') {
