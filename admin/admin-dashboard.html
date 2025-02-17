@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="../styles/admin.css">
+</head>
+<body>
+    <h1>Admin Dashboard</h1>
+    <div class="stats">
+        <div class="stat-box">
+            <h3>Total Students</h3>
+            <p id="studentCount">Loading...</p>
+        </div>
+        <div class="stat-box">
+            <h3>Total Courses</h3>
+            <p id="courseCount">Loading...</p>
+        </div>
+    </div>
+
+    <h2>Change Role</h2>
+    <select id="studentList">
+        <option>Loading...</option>
+    </select>
+    <button id="updateRoleBtn">Change to Instructor</button>
+
+    <script src="../scripts/admin.js"></script>
+</body>
+</html>
