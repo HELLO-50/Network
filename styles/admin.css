@@ -1,0 +1,52 @@
+/* Ensure admin styles don’t override common styles */
+.admin-login-container {
+    width: 300px;
+    margin: 100px auto;
+    padding: 20px;
+    background: #f8f9fa;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.admin-login-container h2 {
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+.admin-login-container input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.admin-login-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.admin-login-container button:hover {
+    background-color: #0056b3;
+}
+
+/* Dashboard Styles */
+.stats {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+}
+
+.stat-box {
+    width: 200px;
+    padding: 15px;
+    background: #eee;
+    text-align: center;
+    border-radius: 5px;
+}
