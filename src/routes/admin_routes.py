@@ -3,16 +3,30 @@ from models import db, User, Course
 
 admin_bp = Blueprint("admin", __name__)
 
+def get_admin_password():
+    try:
+        with open("/home/your-username/admin_pass.txt", "r") as f:
+            return f.read().strip()  # Read and remove extra spaces
+    except FileNotFoundError:
+        return None
+    
 @admin_bp.route("/login", methods=["POST"])
 def admin_login():
     data = request.json
-    username = data.get("username")
-    password = data.get("password")
+    username = data.get("username")  # Admin username
+    password = data.get("password")  # Entered password
 
-    if username == "admin" and password == "AdminPass123":  # Change this in production!
-        return jsonify({"message": "Login successful", "token": "admin-token"})
-    else:
+    # Fixed admin username
+    ADMIN_USERNAME = "admin"
+    
+    # Load the correct hashed password from the file
+    correct_hashed_password = get_admin_password()
+
+    # Authentication check
+    if username != ADMIN_USERNAME or not correct_hashed_password or not check_password_hash(correct_hashed_password, password):
         return jsonify({"error": "Invalid credentials"}), 401
+
+    return jsonify({"message": "Login successful", "token": "admin-token"})
 
 @admin_bp.route("/stats", methods=["GET"])
 def admin_stats():
