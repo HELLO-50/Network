@@ -67,3 +67,36 @@ async function loadAdminDashboard() {
         console.error("Error loading admin dashboard:", error);
     }
 }
+// admin page login
+function setupAdminLogin() {
+    const loginForm = document.getElementById("adminLoginForm");
+
+    if (loginForm) {
+        loginForm.addEventListener("submit", async function (event) {
+            event.preventDefault();  // Prevent page reload
+
+            const username = document.getElementById("adminUsername").value;
+            const password = document.getElementById("adminPassword").value;
+
+            try {
+                const response = await fetch("/admin/login", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ username, password })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    localStorage.setItem("adminToken", data.token);
+                    window.location.href = "admin-dashboard.html"; // Redirect to dashboard
+                } else {
+                    document.getElementById("adminLoginError").textContent = data.error;
+                }
+            } catch (error) {
+                console.error("Login error:", error);
+                document.getElementById("adminLoginError").textContent = "Login failed. Please try again.";
+            }
+        });
+    }
+}
