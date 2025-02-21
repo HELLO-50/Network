@@ -69,6 +69,7 @@ async function loadAdminDashboard() {
 }
 // admin page login
 function setupAdminLogin() {
+    console.log("✅ setupAdminLogin() is running!");
     const loginForm = document.getElementById("adminLoginForm");
 
     if (loginForm) {
